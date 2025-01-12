@@ -5,31 +5,37 @@
 
 .sidebar {
      background-color: rgb(166, 178, 178);
-    width: 16vw;
+    width: 270px;
     height: 100vh;
 }
 
 .sidebar nav{
-    padding: 45px;
+    padding: 58px;
+    font-weight: bold;
 
 }
 
 .sidebar nav li{
     list-style: none;
     font-size: 25px;
-    padding: 15px;
+    padding: 10px;
+}
+
+.sidebar nav li a{
+    text-decoration: none;
+    color: black;
 }
 
 .main{
-    /* background-color: yellow; */
+     /* background-color: yellow; */ 
     width: 84vw;
 }
 
 .infocontainer{
-    /* background-color: rgb(218, 23, 101); */
+    /* background-color: rgb(218, 23, 101); */ 
     height: 58vh;
-    width: 75vw;
-    margin: 130px auto;
+    width: 55vw;
+    margin: 120px auto;
     display: flex;
     justify-content: space-around;
 }
@@ -53,7 +59,8 @@
     font-size: 30px;
 }
 .buttons{
-    margin-top: 20px;
+    margin: 10px;
+    margin-left: 25px;
 }
 .buttons button{
     padding: 6px;
@@ -79,3 +86,33 @@
 .container {
     display: flex;
 }
+
+.contectform {
+    padding: 0 34px;
+    text-align: center;
+    padding-top: 144px;
+}
+
+.contectform h1{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contectform form div {
+    padding: 7px 0px;
+    font-size: 23px;
+    display: flex;
+    /* flex-direction: column;  */
+}
+
+.contectform form div input{
+    width: 16vw;
+    border-radius: 5px;
+    margin: 6px 0px;
+    padding: 3px;
+}
+
+.contectform form div label{
+    width: 10vw;  
+}
+
