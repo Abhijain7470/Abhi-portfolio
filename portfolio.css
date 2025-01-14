@@ -4,9 +4,12 @@
 }
 
 .sidebar {
-     background-color: rgb(166, 178, 178);
-    width: 270px;
+    /* position: absolute; */
+    background-color: rgb(166, 178, 178);
+    width: 270px; 
     height: 100vh;
+    transition: transform 0.3s ease-in;
+    
 }
 
 .sidebar nav{
@@ -26,9 +29,52 @@
     color: black;
 }
 
+.sidebargo{
+    transform: translate(-443px, 0px);
+    position: absolute;
+}
+
+.hamburger{
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    left: 10px;
+}
+
+.cross{
+    margin-left: 190px;
+    
+}
+
+@media (max-width: 1615px) {
+    
+}
+
+@media (max-width: 900px) {
+    .devpic {
+        display: none;
+    }
+
+    .sidebar{
+        position: absolute;
+    }
+    
+    .contectform form div{
+        flex-direction: column;
+        width: 55vw;
+    }
+
+    .contectform form div input{
+        width: 55vw;
+        
+    }
+    
+}
+
 .main{
      /* background-color: yellow; */ 
     width: 84vw;
+    display:contents;
 }
 
 .infocontainer{
@@ -46,6 +92,10 @@
     flex-direction: column;
 }
 
+.devinfo h2{
+    margin-top: 10px;
+}
+
 .hello{
     font-size: 60px;
     font-family: 'Times New Roman', Times, serif;
@@ -60,23 +110,47 @@
 }
 .buttons{
     margin: 10px;
-    margin-left: 25px;
 }
-.buttons button{
+
+.btn{
     padding: 6px;
     border-radius: 22px;
     color: rgb(7, 7, 7);
     background-color: rgb(184, 209, 209);
     font-weight: bold;
     font-size: 20px;
-    margin: 0 3 px;
+    margin-left: 0;
+    margin-top: 5px;
     cursor: pointer;
     border-width: 4px;
 }
 
-.buttons button:hover{
+.btn-sm{
+    padding: 3px;
+    border-radius: 22px;
+    color: rgb(7, 7, 7);
+    background-color: rgb(184, 209, 209);
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0 40px;
+    
+    margin-left: 30px;
+    cursor: pointer;
+    border-width: 4px;
+}
+
+.btn:hover{
     color: rgb(255, 255, 255);
     background-color: rgb(80, 136, 192);
+}
+
+.btn-sm:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(80, 136, 192);
+}
+
+.devpic{
+    height: 58vh;
 }
 
 .devpic img{
@@ -88,9 +162,9 @@
 }
 
 .contectform {
-    padding: 0 34px;
+    padding: 0 134px;
     text-align: center;
-    padding-top: 144px;
+    padding-top: 124px;
 }
 
 .contectform h1{
@@ -106,7 +180,7 @@
 }
 
 .contectform form div input{
-    width: 16vw;
+    /* width: 16vw; */
     border-radius: 5px;
     margin: 6px 0px;
     padding: 3px;
@@ -116,3 +190,55 @@
     width: 10vw;  
 }
 
+.contectform button{
+    /* position: fixed; */
+    margin-left: 150px;
+}
+
+.blogcontainer{
+    margin: 20px;
+}
+
+.blogitem{
+    margin: 20px;
+}
+
+.blogcontainer h1{
+    margin: 23px;
+}
+
+.blogcontainer p{
+    margin: 10px;
+}
+
+.skillcontainer{
+    padding: 12px;
+}
+
+.skillitem{
+    /* background-color: pink; */
+    display: flex;
+    padding: 2px;
+    align-items: center;
+}
+
+.skill{
+    width: 265px;
+    height: 6px;
+    background-color: red;
+    border: 2px solid black;
+}
+
+.hundered{
+    width: 265px;
+}
+.fifty{
+    width: 125px;
+}
+.t5{
+    width: 75px;
+}
+
+.servicesform{
+    margin: 30px;
+}
