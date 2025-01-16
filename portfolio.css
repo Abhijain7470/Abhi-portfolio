@@ -1,16 +1,95 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Grid layout */
+body{
+    display: grid;
+    grid-template-rows: 50px auto 50px; /*Navbar,content,footer*/
+    grid-template-columns: 250px auto; /*sidebar,maincontain*/
+    height: 100vh;/*full view port*/
+    overflow: hidden;/*prevent body from scrolling*/
+}
+
+.navbar{
+    grid-column: 1 / -1; /*span across the entire widht*/
+    position: sticky; /* Sticks the navbar at the top */
+    top: 0;
+    height: 50px;
+    background-color: red;
+    z-index: 1000; /* Ensure it appears above other elements */
+    display: flex;
+    align-items: center;
+}
+
+.navbar img{
+    width: 50px;
+}
+
+.navlink{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+    align-items: center;
+}
+
+.navlink h1{
+    font-size: 25px;
+    padding: 10px;
+    margin-left: 40px;
+}
+
+.navlink ul{
+    padding: 12px;
+    font-size: 18px;
+}
+.navlink li{
+    display: inline;
+    padding: 5px;
+}
+
+.navlink li a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    
+}
+
+.navlink nav{
+    display: flex;
+    justify-content: space-around;
+    width: 30vw;
+}
+
+.navlink img{
+    border-radius: 50px;
 }
 
 .sidebar {
-    /* position: absolute; */
+    grid-row: 2 / 3;
+    grid-column: 1 / 2; /* Occupy the left column */
+    position: fixed;
+    top: 50px; /* Below the navbar */
+    height: calc(100vh - 100px); /* Full height minus navbar and footer */
     background-color: rgb(166, 178, 178);
-    width: 270px; 
-    height: 100vh;
-    transition: transform 0.3s ease-in;
-    
+    overflow-y: auto;
+    padding: 20px;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
 }
+
+/* Sidebar hidden (default)
+/*.sidebar.hidden {
+    transform: translateX(-100%); /* Slide out of view 
+}*/
+
+/* Sidebar visible */
+/* .sidebar.visible { 
+    transform: translateX(0);
+} */
 
 .sidebar nav{
     padding: 58px;
@@ -21,28 +100,33 @@
 .sidebar nav li{
     list-style: none;
     font-size: 25px;
-    padding: 10px;
+    margin-bottom: 15px;
 }
 
-.sidebar nav li a{
+.sidebar nav li a {
     text-decoration: none;
     color: black;
+    transition: color 0.3s ease;
+}
+
+.sidebar nav li a:hover {
+    color: blue;
 }
 
 .sidebargo{
     transform: translate(-443px, 0px);
-    position: absolute;
+    /* position: absolute; */ 
 }
 
 .hamburger{
-    position: absolute;
+    position: fixed;
     cursor: pointer;
-    top: 10px;
-    left: 10px;
+    z-index: 1100;
 }
 
 .cross{
     margin-left: 190px;
+    margin-top: 50px;
     
 }
 
@@ -55,9 +139,18 @@
         display: none;
     }
 
+    .navlink ul{
+        display: none;
+    }
+
+    body {
+        grid-template-columns: 0 auto; /* Hide sidebar by default */
+    }
+    
     .sidebar{
         position: absolute;
     }
+    
     
     .contectform form div{
         flex-direction: column;
@@ -68,13 +161,44 @@
         width: 55vw;
         
     }
+
+    .cross{
+        margin-left: 0px;
+        margin-top: 0px;
+    }
     
 }
 
-.main{
-     /* background-color: yellow; */ 
-    width: 84vw;
-    display:contents;
+@media (max-width: 1300px){
+    .navbar{
+        height: 65px;
+    } 
+}
+
+@media (max-width: 500px){
+    .navbar{
+        height: 80px;
+    }
+}
+
+/* Main Content */
+.main {
+    grid-row: 2 / 3; /* Start below the navbar */
+    grid-column: 2 / -1; /* Start after the sidebar */
+    overflow-y: auto; /* Make main content scrollable */
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.footer {
+    grid-column: 1 / -1;
+    height: 50px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
 }
 
 .infocontainer{
@@ -133,7 +257,6 @@
     font-weight: bold;
     font-size: 18px;
     margin: 0 40px;
-    
     margin-left: 30px;
     cursor: pointer;
     border-width: 4px;
